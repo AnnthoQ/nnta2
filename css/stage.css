@@ -184,14 +184,35 @@ p b { color: var(--label); }
 .mech p b { flex: none; width: 104px; font-size: 20px; text-transform: uppercase; letter-spacing: .05em; padding-top: 2px; }
 .mech p b.ta { color: var(--a); } .mech p b.tb { color: var(--b); }
 
-/* ---------- 9 · Etapas ---------- */
-.stages { flex: 1; display: grid; grid-template-columns: repeat(4, 1fr); gap: 26px; align-items: center; position: relative; }
-.stages::before { content: ""; position: absolute; left: 6%; right: 6%; top: 50%; height: 2px; background: linear-gradient(90deg, var(--green), var(--indigo)); opacity: .35; }
-.st { padding: 40px 34px 38px; display: flex; flex-direction: column; gap: 14px; min-height: 290px; }
-.st .num { width: 64px; height: 64px; border-radius: 50%; display: grid; place-items: center; font-size: 30px; font-weight: 750;
-  background: var(--green); color: #00210b; margin-bottom: 8px; }
-.st h4 { font-size: 36px; }
-.st p { font-size: 25px; }
+/* ---------- 9 · Chat de la negociación ---------- */
+.chat-top { display: flex; align-items: center; justify-content: space-between; gap: 30px; }
+.track { list-style: none; display: flex; gap: 12px; margin: 0; padding: 0; }
+.track li { display: flex; align-items: center; gap: 12px; padding: 10px 22px 10px 10px; border-radius: 999px; font-size: 24px; font-weight: 600;
+  color: var(--label2); background: rgba(255, 255, 255, .06); border: 1px solid rgba(255, 255, 255, .08); }
+.track li span { width: 38px; height: 38px; border-radius: 50%; display: grid; place-items: center; font-size: 20px; font-weight: 750;
+  background: rgba(255, 255, 255, .12); color: var(--label2); transition: background .4s, color .4s; }
+.track li[data-step] { opacity: .45; transform: none; }
+.track li.in { opacity: 1; color: var(--label); }
+.track li.in span { background: color-mix(in srgb, var(--green) 45%, transparent); color: #fff; }
+.track li.in:not(:has(~ li.in)) { background: color-mix(in srgb, var(--green) 20%, rgba(255, 255, 255, .05)); border-color: color-mix(in srgb, var(--green) 55%, transparent); }
+.track li.in:not(:has(~ li.in)) span { background: var(--green); color: #00210b; }
+.who { display: flex; gap: 28px; font-size: 22px; }
+.who b { display: flex; align-items: center; gap: 10px; }
+.who b::before { content: ""; width: 14px; height: 14px; border-radius: 50%; background: currentColor; }
+
+.chat { flex: 1 1 0; min-height: 0; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 0 40px; -webkit-mask-image: linear-gradient(transparent, #000 90px); mask-image: linear-gradient(transparent, #000 90px); }
+.msg { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .6s var(--ease); }
+.msg[data-step] { opacity: 1; transform: none; }
+.msg.in { grid-template-rows: 1fr; }
+.msg > div { min-height: 0; overflow: hidden; display: flex; padding-top: 22px; }
+.msg.cont > div { padding-top: 8px; }
+.msg.b > div { justify-content: flex-end; }
+.msg p { max-width: 64%; padding: 18px 28px; border-radius: 34px; font-size: 29px; line-height: 1.3; color: #fff;
+  opacity: 0; transform: translateY(26px) scale(.94); transition: opacity .45s var(--ease) .12s, transform .7s var(--spring) .12s; }
+.msg.a p { background: #2C2C2E; border: 1px solid color-mix(in srgb, var(--a) 45%, transparent); border-bottom-left-radius: 10px; transform-origin: 0 100%; }
+.msg.b p { background: var(--b); border-bottom-right-radius: 10px; transform-origin: 100% 100%; }
+.msg.in p { opacity: 1; transform: none; }
 
 /* ---------- 10 · Rondas ---------- */
 .rounds-wrap { flex: 1; display: grid; grid-template-columns: 1.3fr 1fr; gap: 34px; }

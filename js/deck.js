@@ -205,25 +205,42 @@
       ],
     },
     // ------------------------------------------------------------------ 9
-    {
-      title: 'La negociación en vivo', tint: ['#30D158', '#5E5CE6', '#0A84FF'],
-      html: `${hd('S17 · Negociación aplicada', 'La negociación en vivo')}
-      <p class="lead">Jhefferson (Operaciones, rol A) frente a Roy (Mantenimiento, rol B)</p>
-      <div class="stages">
-        <div class="glass st" data-step="1"><span class="num">1</span><h4>Apertura</h4><p>Clima colaborativo y posiciones iniciales</p></div>
-        <div class="glass st" data-step="2"><span class="num">2</span><h4>Información</h4><p>Preguntas, evidencia e intereses reales</p></div>
-        <div class="glass st" data-step="3"><span class="num">3</span><h4>Propuestas</h4><p>Concesiones a cambio de condiciones</p></div>
-        <div class="glass st" data-step="4"><span class="num">4</span><h4>Cierre</h4><p>Reformulación y acta de acuerdo</p></div>
-      </div>
-      <div class="glass banner">${tile('mano', 'green')}<p>Objetivo: un acuerdo ganar-ganar que respete la condición no negociable.</p></div>`,
-      notes: [
-        'A: Ahora pasamos a la negociación, con las etapas de la negociación aplicada de la semana 17. Si el docente pide la simulación ahora, avancen una etapa en el celular cada vez que pasen a la siguiente. Hablen con sus propias palabras: este guion es solo una guía.',
-        'J: «Gracias por reunirnos. Los dos respondemos por los resultados de la unidad, así que busquemos una solución que cuide la producción y la seguridad».\nR: «Coincido. En la inspección medimos un desgaste del componente de la chancadora mayor al límite del fabricante. Propongo ampliar la parada 48 horas para cambiarlo y probarlo».\nJ: «Vamos por debajo de la meta y cada día parado cuesta S/ 250 000. Propongo arrancar al cumplir las 72 horas, reforzar las inspecciones y hacer el cambio en la próxima parada programada».',
-        'R: «Entiendo tu preocupación por la meta. Pero con ese desgaste no podemos operar el equipo: es una condición que no se negocia. Además, una falla no programada costaría S/ 1 200 000 y nos tendría parados más tiempo».\nJ: «¿Qué evidencia tienes del desgaste? ¿Cuánto es el mínimo técnico? ¿Qué parte del trabajo se puede adelantar dentro de las 72 horas?».\nR: «Tengo el registro de la inspección. El desmontaje y la preparación de repuestos podemos empezarlos hoy; el cambio y las pruebas no se pueden recortar. ¿Qué necesitas para sustentar la ampliación ante la gerencia general?».\nJ: «Necesito un sustento técnico y económico por escrito, y un plan para recuperar la producción, porque me preocupan las penalidades».',
-        'J: «Entonces podría aceptar 24 horas adicionales».\nR: «No te digo que no: podríamos bajar de 48 horas si adelantamos el desmontaje desde hoy y trabajamos en turnos continuos. Con eso necesitaríamos 40 horas».\nJ: «Te propongo 30 horas, con mi personal de apoyo».\nR: «Con cuatro operadores de tu área y turnos continuos, el mínimo técnico es 36 horas. Menos recortaría las pruebas. Y los repuestos y el personal especializado solo están disponibles ahora».\nJ: «Acepto 36 horas si tu equipo garantiza la disponibilidad de la chancadora durante seis meses, me apoya en el plan de recuperación y firmamos juntos el informe para la gerencia general».\nR: «De acuerdo, siempre que el equipo arranque solo con las pruebas aprobadas».',
-        'R: «Si entiendo bien: adelantamos el desmontaje, ampliamos 36 horas con turnos continuos y cuatro operadores, arrancamos solo con pruebas aprobadas, garantizamos la disponibilidad por seis meses, ejecutamos un plan de recuperación y presentamos juntos el informe. ¿Lo dejamos en un acta?».\nJ: «Sí. Cerremos hoy: cada hora que discutimos con la planta detenida también nos cuesta».',
-      ],
-    },
+    (() => {
+      // Chat de la simulación: cada burbuja aparece en un paso. A = Operaciones (izquierda), B = Mantenimiento (derecha).
+      const etapas = [['Apertura', 1], ['Información', 4], ['Propuestas', 8], ['Cierre', 14]];
+      const chat = [
+        ['a', 'Gracias por reunirnos. Los dos respondemos por los resultados de la unidad: busquemos una solución que cuide la producción y la seguridad.'],
+        ['b', 'Coincido. El componente de la chancadora tiene un desgaste mayor al límite del fabricante. Propongo ampliar la parada 48 horas para cambiarlo y probarlo.'],
+        ['a', 'Vamos por debajo de la meta y cada día parado cuesta S/ 250 000. Propongo arrancar a las 72 horas y hacer el cambio en la próxima parada.'],
+        ['b', 'Entiendo tu preocupación por la meta. Pero no podemos operar un equipo fuera de norma, y una falla costaría S/ 1 200 000 y más días parados.'],
+        ['a', '¿Qué evidencia tienes del desgaste? ¿Cuál es el mínimo técnico? ¿Qué se puede adelantar dentro de las 72 horas?'],
+        ['b', 'Tengo el registro de la inspección. El desmontaje y los repuestos los adelantamos desde hoy; el cambio y las pruebas no se recortan. ¿Qué necesitas para sustentarlo ante la gerencia?'],
+        ['a', 'Un sustento técnico y económico por escrito, y un plan para recuperar la producción.'],
+        ['a', 'Entonces podría aceptar 24 horas adicionales.'],
+        ['b', 'No te digo que no: si adelantamos el desmontaje y trabajamos en turnos continuos, bajamos a 40 horas.'],
+        ['a', 'Te propongo 30 horas, con personal de apoyo de mi área.'],
+        ['b', 'Con cuatro operadores de tu área y turnos continuos, el mínimo técnico es 36 horas. Menos recortaría las pruebas.'],
+        ['a', 'Acepto 36 horas si garantizas la disponibilidad de la chancadora por seis meses, me apoyas en la recuperación y firmamos juntos el informe.'],
+        ['b', 'De acuerdo, siempre que el equipo arranque solo con las pruebas aprobadas.'],
+        ['b', 'Resumo: desmontaje adelantado, 36 horas con turnos continuos y cuatro operadores, arranque con pruebas aprobadas, garantía de seis meses, plan de recuperación e informe conjunto. ¿Lo dejamos en un acta?'],
+        ['a', 'Sí. Cerremos hoy: cada hora que discutimos con la planta detenida también nos cuesta.'],
+      ];
+      const quien = { a: 'J', b: 'R' };
+      return {
+        title: 'La negociación en vivo', tint: ['#30D158', '#5E5CE6', '#0A84FF'],
+        html: `${hd('S17 · Negociación aplicada', 'La negociación en vivo')}
+        <div class="chat-top">
+          <ol class="track">${etapas.map(([n, s], i) => `<li data-step="${s}"><span>${i + 1}</span>${n}</li>`).join('')}</ol>
+          <p class="who"><b class="ta">Operaciones · Jhefferson</b><b class="tb">Roy · Mantenimiento</b></p>
+        </div>
+        <div class="chat">${chat.map(([w, t], i) =>
+          `<div class="msg ${w}${i && chat[i - 1][0] === w ? ' cont' : ''}" data-step="${i + 1}"><div><p>${t}</p></div></div>`).join('')}</div>`,
+        notes: [
+          'A: Ahora pasamos a la negociación, con las etapas de la negociación aplicada de la semana 17. Cada vez que avancen aparece el siguiente mensaje: léanlo o díganlo con sus propias palabras.',
+          ...chat.map(([w, t]) => `${quien[w]}: «${t}»`),
+        ],
+      };
+    })(),
     // ------------------------------------------------------------------ 10
     {
       title: 'Cómo llegamos a 36 horas', tint: ['#FF9F0A', '#0A84FF', '#30D158'],

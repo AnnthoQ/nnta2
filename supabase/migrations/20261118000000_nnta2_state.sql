@@ -172,7 +172,7 @@ end;
 $$;
 
 -- Pasos por lámina según js/deck.js (si cambias el contenido, actualiza este arreglo)
-insert into public.nnta2_state (id, steps) values ('ta2-caso4', '{1,4,3,4,3,3,4,5,4,5,6,4,4,5}')
+insert into public.nnta2_state (id, steps) values ('ta2-caso4', '{1,4,3,4,3,3,4,5,15,5,6,4,4,5}')
 on conflict (id) do update set steps = excluded.steps;
 
 -- ---------------------------------------------------------------------------------------------
