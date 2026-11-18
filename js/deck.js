@@ -134,18 +134,18 @@
           <small>BATNA</small><h3>Elevar la decisión a la gerencia general</h3>
           <div class="meter" style="--c:var(--a)"><i class="on"></i><i class="on"></i><i></i><i></i><i></i><b>Débil</b></div>
           <p>La condición no negociable impide operar el equipo; la gerencia podría ordenar las 48 horas sin plan ni garantía.</p>
-          <small>Punto de reserva (SA)</small><p class="strong">Hasta 48 horas, solo con sustento por escrito y un plan para recuperar la producción.</p>
+          <small>Punto de reserva</small><p class="strong">Hasta 48 horas, solo con sustento por escrito y un plan para recuperar la producción.</p>
         </article>
         <article class="glass" data-step="2">
           <span class="capsule chip b">Mantenimiento (B)</span>
           <small>BATNA</small><h3>Informe técnico y no liberar el equipo</h3>
           <div class="meter" style="--c:var(--b)"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><b>Más fuerte</b></div>
           <p>Lo respalda la condición de seguridad, pero rompe la relación con Operaciones.</p>
-          <small>Punto de reserva (SA)</small><p class="strong">Nunca arrancar sin cambio y pruebas; mínimo 36 horas con tareas adelantadas y turnos continuos.</p>
+          <small>Punto de reserva</small><p class="strong">Nunca arrancar sin cambio y pruebas; mínimo 36 horas con tareas adelantadas y turnos continuos.</p>
         </article>
       </div>
       <p class="takeaway" data-step="3">El BATNA más fuerte de Mantenimiento explica por qué cedió menos.</p>
-      <p class="foot">SA = supuesto académico: el caso no fija estos límites; los definimos como equipo.</p>`,
+      <p class="foot">Límites definidos por cada parte para la negociación.</p>`,
       notes: [
         'J: Antes de negociar, cada uno definió su mejor alternativa si no había acuerdo.',
         'J: La mía era llevar el problema a la gerencia general. Era débil: con la condición de seguridad, la gerencia probablemente ordenaría la ampliación, quizá por las 48 horas y sin condiciones para mí. Por eso no la revelé. Mi límite: hasta 48 horas, con sustento por escrito y un plan de recuperación.',
@@ -163,7 +163,7 @@
         <div class="z-track">
           <div class="z-band" data-step="3"><span>ZOPA</span></div>
           <div class="z-bar a" data-step="1"><span>Acepta de 0 a 48 h, con sustento y plan</span></div>
-          <div class="z-bar b" data-step="2"><span>Desde 36 h: mínimo técnico (SA)</span></div>
+          <div class="z-bar b" data-step="2"><span>Desde 36 h: mínimo técnico</span></div>
           <div class="z-axis"><i style="--x:0">0 h</i><i style="--x:20">12 h</i><i style="--x:40">24 h</i><i class="k" style="--x:60">36 h</i><i class="k" style="--x:80">48 h</i><i style="--x:100">60 h</i></div>
         </div>
       </div>
@@ -173,7 +173,7 @@
         <div class="glass mini" data-step="4" style="--d:220ms"><span>Falla mayor</span><b class="red">S/ 1 200 000</b></div>
         <div class="glass tinted mini ok" style="--tint:var(--green);--d:330ms" data-step="4"><b>ZOPA: 36 a 48 horas</b><span>Cualquier punto cuesta menos que una falla.</span></div>
       </div>
-      <p class="foot">SA = supuesto académico del grupo. Costos calculados con S/ 250 000 por día.</p>`,
+      <p class="foot">Costos calculados con S/ 250 000 por día.</p>`,
       notes: [
         'R: Con esos límites armamos la zona de posible acuerdo, como vimos en la semana 13.',
         'R: Operaciones podía aceptar desde cero hasta 48 horas, si tenía sustento y un plan de recuperación.',
@@ -192,9 +192,9 @@
         <article class="glass mech" data-step="2">${tile('personas', 'teal')}<em>2</em><h4>Turnos continuos con apoyo de Operaciones</h4><p><b class="ta">A gana</b>Una parada más corta</p><p><b class="tb">B gana</b>Más manos para el trabajo técnico</p></article>
         <article class="glass mech" data-step="3">${tile('produccion', 'green')}<em>3</em><h4>Plan de recuperación de producción</h4><p><b class="ta">A gana</b>Reduce el déficit del mes</p><p><b class="tb">B gana</b>Elimina la objeción principal</p></article>
         <article class="glass mech" data-step="4">${tile('documento', 'blue')}<em>4</em><h4>Informe conjunto a la gerencia general</h4><p><b class="ta">A gana</b>Sustento ante la gerencia</p><p><b class="tb">B gana</b>Reconocen su criterio técnico</p></article>
-        <article class="glass mech" data-step="5">${tile('escudo', 'orange')}<em>5</em><h4>Garantía de confiabilidad (SA)</h4><p><b class="ta">A gana</b>Certeza de no volver a parar</p><p><b class="tb">B gana</b>Demuestra el valor del mantenimiento</p></article>
+        <article class="glass mech" data-step="5">${tile('escudo', 'orange')}<em>5</em><h4>Garantía de confiabilidad</h4><p><b class="ta">A gana</b>Certeza de no volver a parar</p><p><b class="tb">B gana</b>Demuestra el valor del mantenimiento</p></article>
       </div>
-      <p class="foot">A = Operaciones · B = Mantenimiento · SA = supuesto académico.</p>`,
+      <p class="foot">A = Operaciones · B = Mantenimiento ·</p>`,
       notes: [
         'J: Antes de repartir las horas, buscamos ampliar la torta, como vimos en la semana 11. Encontramos cinco mecanismos.',
         'J: Primero, adelantar el desmontaje dentro de las 72 horas: menos horas extra para mí y más tiempo efectivo para Mantenimiento.',
@@ -246,7 +246,7 @@
           <div class="glass move" data-step="5" style="--d:260ms">${tile('mano', 'green')}<div><b>Acuerdo en 36 h</b><span>Operaciones acepta si recibe garantía, informe conjunto y apoyo para recuperar producción.</span></div></div>
         </div>
       </div>
-      <p class="foot">SA: las cifras intermedias (24, 30 y 40 horas) y los cuatro operadores son supuestos académicos de la simulación.</p>`,
+      <p class="foot">Propuestas intermedias registradas durante la simulación de la negociación.</p>`,
       notes: [
         'J: Así nos movimos, ronda por ronda.',
         'J: Yo abrí en cero horas: arrancar a tiempo. Roy abrió en 48.',
@@ -293,14 +293,14 @@
         </div>
         <ul class="terms">
           <li class="glass" data-step="2">${tile('adelantar', 'indigo')}<p>Desmontaje y repuestos adelantados dentro de las 72 h</p><span class="capsule chip b">Mantenimiento</span></li>
-          <li class="glass" data-step="2" style="--d:120ms">${tile('personas', 'teal')}<p>Turnos continuos con cuatro operadores de apoyo (SA)</p><span class="capsule chip n">Ambos</span></li>
+          <li class="glass" data-step="2" style="--d:120ms">${tile('personas', 'teal')}<p>Turnos continuos con cuatro operadores de apoyo</p><span class="capsule chip n">Ambos</span></li>
           <li class="glass" data-step="3">${tile('check', 'green')}<p>Arranque solo con pruebas aprobadas por ambos</p><span class="capsule chip n">Ambos</span></li>
-          <li class="glass" data-step="3" style="--d:120ms">${tile('produccion', 'orange')}<p>Plan de recuperación: 50 % de lo perdido en 4 semanas (SA)</p><span class="capsule chip a">Operaciones</span></li>
-          <li class="glass" data-step="4">${tile('escudo', 'blue')}<p>Disponibilidad de la chancadora de 95 % por 6 meses (SA)</p><span class="capsule chip b">Mantenimiento</span></li>
+          <li class="glass" data-step="3" style="--d:120ms">${tile('produccion', 'orange')}<p>Plan de recuperación: 50 % de lo perdido en 4 semanas</p><span class="capsule chip a">Operaciones</span></li>
+          <li class="glass" data-step="4">${tile('escudo', 'blue')}<p>Disponibilidad de la chancadora de 95 % por 6 meses</p><span class="capsule chip b">Mantenimiento</span></li>
           <li class="glass" data-step="4" style="--d:120ms">${tile('documento', 'indigo')}<p>Informe técnico y económico conjunto en 24 horas</p><span class="capsule chip n">Ambos</span></li>
         </ul>
       </div>
-      <p class="foot">Desacuerdos futuros: reunión de ambos gerentes en 24 h → revisión con datos objetivos → gerencia general. SA = supuesto académico.</p>`,
+      <p class="foot">Desacuerdos futuros: reunión de ambos gerentes en 24 h → revisión con datos objetivos → gerencia general.</p>`,
       notes: [
         'J: Este fue el acuerdo.',
         'J: Ampliamos la parada 36 horas en lugar de 48, con un costo de 375 000 soles: 125 000 menos que lo pedido.',
@@ -357,8 +357,8 @@
   ];
 
   const qa = [
-    ['¿Por qué 36 horas y no 30?', 'Porque 36 es el mínimo técnico que definimos (SA): con turnos continuos y cuatro operadores, menos horas recortarían las pruebas, y la condición no negociable impide arrancar sin pruebas aprobadas.'],
-    ['¿De dónde salen el 50 % y el 95 %?', 'Son supuestos académicos del grupo (SA). El caso no fija metas; las pusimos para que cada compromiso tenga un indicador medible y un mecanismo de verificación.'],
+    ['¿Por qué 36 horas y no 30?', 'Porque 36 es el mínimo técnico que definimos: con turnos continuos y cuatro operadores, menos horas recortarían las pruebas, y la condición no negociable impide arrancar sin pruebas aprobadas.'],
+    ['¿De dónde salen el 50 % y el 95 %?', 'Son metas que acordamos en la negociación. El caso no las fija; las pusimos para que cada compromiso tenga un indicador medible y un mecanismo de verificación.'],
     ['¿Y si la probabilidad de falla fuera baja?', 'Ampliar conviene si supera aproximadamente el 42 % (500 000 ÷ 1 200 000). El caso no da esa probabilidad, pero el desgaste ya supera el límite del fabricante y no se puede operar un equipo fuera de condiciones técnicas.'],
     ['¿Por qué es ganar-ganar si Mantenimiento ganó más?', 'Porque los dos quedaron mejor que con su BATNA y satisficieron sus intereses fundamentales. La consigna acepta resultados asimétricos.'],
     ['¿Cuál era el BATNA de cada uno?', 'Operaciones: elevar la decisión a la gerencia general (débil). Mantenimiento: informe técnico y no liberar el equipo (más fuerte, pero rompía la relación).'],
