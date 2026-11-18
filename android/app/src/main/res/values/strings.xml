@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Control TA2</string>
+    <string name="tagline">Cambia de lámina con los botones de volumen, incluso con la pantalla apagada y el teléfono en el bolsillo.</string>
+
+    <!-- Entrada -->
+    <string name="sec_presenter">Expositor</string>
+    <string name="pin_hint">PIN o clave del grupo</string>
+    <string name="remember">Recordar en este teléfono (cifrado)</string>
+    <string name="sec_conn">Conexión</string>
+    <string name="conn_show">Mostrar</string>
+    <string name="conn_hide">Ocultar</string>
+    <string name="url_label">Servidor (URL de Supabase)</string>
+    <string name="key_label">Clave pública (anon)</string>
+    <string name="deck_label">Presentación</string>
+    <string name="connect">Conectar</string>
+    <string name="connecting">Conectando…</string>
+    <string name="help_link">¿Teléfono Honor? Evita que se cierre en segundo plano</string>
+    <string name="privacy_note">El PIN se guarda solo en la memoria mientras dura la presentación. Si activas «Recordar», se guarda cifrado con una llave que no sale de este teléfono.</string>
+    <string name="err_pin_empty">Escribe el PIN del expositor.</string>
+    <string name="err_conn_empty">Completa los datos de conexión.</string>
+    <string name="err_pin_wrong">Clave incorrecta.</string>
+    <string name="err_server">El servidor respondió con un error.</string>
+    <string name="err_offline">No hay conexión con el servidor. Revisa internet e inténtalo otra vez.</string>
+
+    <!-- Control -->
+    <string name="st_online">Conectado</string>
+    <string name="st_connecting">Conectando…</string>
+    <string name="st_retrying">Sin conexión · reintentando</string>
+    <string name="st_auth">Clave incorrecta</string>
+    <string name="st_setup">Error del servidor</string>
+    <string name="slide_label">Lámina</string>
+    <string name="slide_of">de %d</string>
+    <string name="step_of">Paso %1$d de %2$d</string>
+    <string name="step_only">Paso %d</string>
+    <plurals name="queued">
+        <item quantity="one">%d pulsación en cola</item>
+        <item quantity="other">%d pulsaciones en cola</item>
+    </plurals>
+    <string name="timer_label">Cronómetro</string>
+    <string name="timer_pause">Pausar</string>
+    <string name="timer_resume">Seguir</string>
+    <string name="timer_reset">Reiniciar</string>
+    <string name="volume_hint">Volumen + siguiente · Volumen − anterior\nPuedes apagar la pantalla y guardar el teléfono.</string>
+    <string name="prev">Anterior</string>
+    <string name="next">Siguiente</string>
+    <string name="stop">Detener</string>
+    <string name="cancel">Cancelar</string>
+    <string name="help_short">Ayuda Honor</string>
+    <string name="battery_warn">Android puede pausar la app con la pantalla apagada. Permite que funcione en segundo plano.</string>
+    <string name="battery_allow">Permitir</string>
+    <string name="stop_title">¿Detener la presentación?</string>
+    <string name="stop_msg">Los botones de volumen volverán a cambiar el volumen y se borrará el PIN de la memoria.</string>
+
+    <!-- Notificación -->
+    <string name="channel_name">Presentación en curso</string>
+    <string name="channel_desc">Mantiene activo el control con los botones de volumen.</string>
+    <string name="notif_title">Presentación en curso</string>
+
+    <!-- Ayuda Honor / MagicOS -->
+    <string name="help_title">Ayuda para Honor</string>
+    <string name="back">Volver</string>
+    <string name="help_intro">MagicOS cierra las apps en segundo plano para ahorrar batería. Para que el control siga funcionando con la pantalla apagada, haz estos ajustes una sola vez:</string>
+    <string name="help_device_honor">Este teléfono es %1$s %2$s: sigue todos los pasos.</string>
+    <string name="help_device_other">Este teléfono es %1$s %2$s. Los nombres de los menús pueden cambiar, pero la idea es la misma.</string>
+    <string name="help_s1_title">1. Inicio de aplicaciones: gestionar manualmente</string>
+    <string name="help_s1">Ajustes → Batería → Inicio de aplicaciones (en algunos modelos: Ajustes → Aplicaciones → Inicio de aplicaciones).\n\n• Busca «Control TA2».\n• Desactiva «Gestionar automáticamente».\n• En la ventana que aparece deja activados los tres: «Inicio automático», «Inicio secundario» y «Ejecutar en segundo plano».\n• Toca Aceptar.</string>
+    <string name="help_s1_btn">Abrir Inicio de aplicaciones</string>
+    <string name="help_s2_title">2. Sin optimización de batería</string>
+    <string name="help_s2">Acepta el aviso «¿Permitir que la app se ejecute siempre en segundo plano?». Si no aparece: Ajustes → Aplicaciones → Aplicaciones → Control TA2 → Batería.</string>
+    <string name="help_s2_btn">Permitir en segundo plano</string>
+    <string name="help_s3_title">3. Ahorro de energía apagado</string>
+    <string name="help_s3">Durante la exposición desactiva «Modo de ahorro de energía» (Ajustes → Batería). Si tu modelo tiene «Mantener conectado cuando el dispositivo está en reposo» (Batería → Más ajustes), actívalo.</string>
+    <string name="help_s3_btn">Abrir Batería</string>
+    <string name="help_s4_title">4. Notificaciones permitidas</string>
+    <string name="help_s4">La notificación «Presentación en curso» es la que mantiene viva la app. No la ocultes ni bloquees las notificaciones de Control TA2.</string>
+    <string name="help_s4_btn">Abrir notificaciones</string>
+    <string name="help_s5_title">5. Fija la app en Recientes</string>
+    <string name="help_s5">Abre la vista de apps recientes, desliza hacia abajo la tarjeta de Control TA2 hasta que aparezca un candado. Así «Borrar todo» no la cierra.</string>
+    <string name="help_s6_title">Antes de exponer</string>
+    <string name="help_s6">Haz una prueba: conecta, apaga la pantalla, guarda el teléfono en el bolsillo 5 minutos y luego presiona Volumen +. Debe avanzar y vibrar una vez. Dos vibraciones significan que no llegó al servidor (se reintenta solo).</string>
+    <string name="help_app_btn">Ajustes de la app</string>
+    <string name="check_battery_ok">✓ La optimización de batería está desactivada</string>
+    <string name="check_battery_bad">• La optimización de batería sigue activa</string>
+    <string name="check_notif_ok">✓ Notificaciones permitidas</string>
+    <string name="check_notif_bad">• Las notificaciones están bloqueadas</string>
+</resources>

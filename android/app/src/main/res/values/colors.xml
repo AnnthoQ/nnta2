@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Colores del modo oscuro de iOS -->
+<resources>
+    <color name="bg">#000000</color>
+    <color name="card">#1C1C1E</color>
+    <color name="card2">#2C2C2E</color>
+    <color name="fill3">#48484A</color>
+    <color name="label">#FFFFFF</color>
+    <color name="label2">#99EBEBF5</color>
+    <color name="label3">#4DEBEBF5</color>
+    <color name="blue">#0A84FF</color>
+    <color name="green">#30D158</color>
+    <color name="orange">#FF9F0A</color>
+    <color name="red">#FF453A</color>
+</resources>
