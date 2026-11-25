@@ -56,8 +56,18 @@
     stage.className = 'stage';
     stage.innerHTML = '<div class="ambient" aria-hidden="true"><i></i><i></i><i></i></div>' +
       D.slides.map((s, i) => `<section class="slide" data-n="${i + 1}" aria-label="${esc(s.title)}">${nb(s.html)}</section>`).join('') +
-      (pager ? `<nav class="pager glass" aria-hidden="true">${D.slides.map(() => '<i></i>').join('')}</nav>` : '');
+      (pager ? `<nav class="pager glass" aria-hidden="true">${D.slides.map(() => '<i></i>').join('')}</nav>` : '') +
+      (window.UTP_LOGO ? `<div class="brand intro">${window.UTP_LOGO}</div>` : '');
     root.appendChild(stage);
+    const brand = stage.querySelector('.brand');
+    /* Al cambiar de lámina los tres cuadros giran en cascada (se reinicia la animación cada vez) */
+    /* En la portada se oculta (ya tiene el logo grande); al salir de ella vuelve a entrar con su animación inicial */
+    const flip = (kind) => {
+      if (!brand) return;
+      brand.classList.remove('intro', 'flip');
+      void brand.getBoundingClientRect();
+      brand.classList.add(kind);
+    };
 
     const slides = [...stage.querySelectorAll('.slide')];
     const amb = stage.querySelector('.ambient');
@@ -100,6 +110,8 @@
         const t = D.slides[st.slide - 1].tint || [];
         ['--c1', '--c2', '--c3'].forEach((v, i) => t[i] && amb.style.setProperty(v, t[i]));
         dots.forEach((d, i) => { d.classList.toggle('on', i === st.slide - 1); d.classList.toggle('done', i < st.slide - 1); });
+        stage.dataset.slide = st.slide;
+        if (cur && st.slide !== 1) flip(cur === 1 ? 'intro' : 'flip');
       } else if (st.step !== curStep) {
         apply(el, st.step, false);
       }

@@ -72,8 +72,13 @@ p b { color: var(--label); }
 
 /* ---------- 1 · Portada ---------- */
 .cover { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 28px; }
-.logo-tile { background: #fff; border-radius: 26px; padding: 18px 30px; box-shadow: 0 20px 60px rgba(0, 0, 0, .5); }
-.logo-tile img { display: block; height: 58px; }
+.cover-logo { width: 440px; filter: drop-shadow(0 18px 48px rgba(0, 0, 0, .5)); }
+.cover-logo svg { display: block; width: 100%; height: auto; overflow: visible; }
+.cover-logo .box { fill: #fff; } .cover-logo .ltr { fill: #000; } .cover-logo .txt { fill: #fff; }
+.cover-logo .sq { transform-box: fill-box; transform-origin: 50% 50%; }
+/* Cada vez que se abre la portada: cuadros en cascada con rebote y el texto se descubre */
+.slide.on .cover-logo .sq { animation: brand-pop .9s var(--spring) both; animation-delay: calc(.3s + var(--i) * .12s); }
+.slide.on .cover-logo .txt { animation: brand-wipe .9s var(--ease) .8s both; }
 .cover h1 { font-size: 104px; max-width: 1500px; letter-spacing: -.035em; line-height: 1.02; }
 .cover .lead { font-size: 36px; margin: 0; }
 .people { display: flex; gap: 28px; margin-top: 20px; }
@@ -93,6 +98,12 @@ p b { color: var(--label); }
 .q-ico { font-size: 64px; color: var(--yellow); line-height: 0; }
 .question h3 { font-size: 58px; letter-spacing: -.03em; line-height: 1.06; }
 .question p { font-size: 27px; }
+.question .stakes-label { font-size: 21px; font-weight: 600; color: var(--label3); text-transform: uppercase; letter-spacing: .06em; margin-top: 6px; }
+.stakes { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: -8px; }
+.stake { display: flex; flex-direction: column; align-items: flex-start; gap: 18px; padding: 24px 26px; border-radius: 26px;
+  background: rgba(255, 255, 255, .06); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .1); }
+.stake .tile { width: 58px; height: 58px; border-radius: 17px; font-size: 30px; }
+.question .stake p { font-size: 27px; font-weight: 600; color: var(--label); line-height: 1.2; }
 
 /* ---------- 3 · Conflicto ---------- */
 .duel { display: grid; grid-template-columns: 1fr 96px 1fr; align-items: center; gap: 28px; }
@@ -161,7 +172,7 @@ p b { color: var(--label); }
 .z-band { position: absolute; left: 60%; width: 20%; top: -18px; height: 262px; border-radius: 22px; z-index: 1;
   background: rgba(48, 209, 88, .16); box-shadow: inset 0 0 0 3px rgba(48, 209, 88, .9), 0 0 60px rgba(48, 209, 88, .35); }
 .z-band span { position: absolute; left: 50%; bottom: 14px; transform: translateX(-50%); font-size: 26px; font-weight: 750;
-  color: var(--green); letter-spacing: .08em; }
+  color: var(--green); letter-spacing: .01em; white-space: nowrap; }
 .z-axis { position: absolute; left: 0; right: 0; bottom: 0; height: 30px; border-top: 2px solid var(--sep); }
 .z-axis i { position: absolute; left: calc(var(--x) * 1%); top: 10px; transform: translateX(-50%); font-style: normal; white-space: nowrap; font-size: 21px; color: var(--label3); }
 .z-axis i:first-child { transform: none; }
@@ -303,3 +314,27 @@ p b { color: var(--label); }
 .slide::after { content: ""; margin-top: auto; }
 .slide > .hd:has(+ .lead) { margin-bottom: 0; }
 .slide > .lead { margin-bottom: auto; }
+
+/* ---------- Logo UTP en la esquina (todas las láminas) ---------- */
+.brand { position: absolute; top: 62px; right: 96px; z-index: 3; width: 232px; pointer-events: none;
+  filter: drop-shadow(0 10px 28px rgba(0, 0, 0, .45)); }
+.brand { transition: opacity .35s var(--ease); }
+.stage[data-slide="1"] .brand { opacity: 0; }
+.brand svg { display: block; width: 100%; height: auto; overflow: visible; }
+.brand .box { fill: #fff; }
+.brand .ltr { fill: #000; }
+.brand .txt { fill: #fff; }
+.brand .sq { transform-box: fill-box; transform-origin: 50% 50%; }
+
+/* Entrada al abrir: los cuadros caen uno tras otro con rebote y el texto se descubre de izquierda a derecha */
+.brand.intro .sq { animation: brand-pop .9s var(--spring) both; animation-delay: calc(.25s + var(--i) * .12s); }
+.brand.intro .txt { animation: brand-wipe .9s var(--ease) .75s both; }
+@keyframes brand-pop { from { opacity: 0; transform: translateY(-40%) scale(.4); } to { opacity: 1; transform: none; } }
+@keyframes brand-wipe { from { clip-path: inset(0 100% 0 0); opacity: 0; } to { clip-path: inset(0 0 0 0); opacity: 1; } }
+
+/* Cambio de lámina: giro en cascada de U, T y P */
+.brand.flip .sq { animation: brand-flip .62s var(--ease) both; animation-delay: calc(var(--i) * .09s); }
+@keyframes brand-flip { 0% { transform: none; } 45% { transform: scaleX(0); } 100% { transform: none; } }
+
+.viewport.preview .brand.intro .sq, .viewport.preview .brand.intro .txt { animation: none; }
+@media (prefers-reduced-motion: reduce) { .brand .sq, .brand .txt, .cover-logo .sq, .cover-logo .txt { animation: none !important; } }

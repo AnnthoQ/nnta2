@@ -19,7 +19,7 @@
       title: 'Portada', tint: ['#0A84FF', '#FF9F0A', '#5E5CE6'],
       html: `
       <div class="cover">
-        <div class="logo-tile"><img src="assets/utp.png" alt="Universidad Tecnológica del Perú"></div>
+        <div class="cover-logo">${window.UTP_LOGO || ''}</div>
         <span class="eyebrow glass">Negociación y Narrativa · Tarea Académica 2</span>
         <h1>Parada de planta en la unidad minera <span class="grad">Santa Isabel</span></h1>
         <p class="lead">Caso 4 · Una negociación entre Operaciones y Mantenimiento</p>
@@ -47,7 +47,11 @@
         <div class="glass question" data-step="4">
           <span class="q-ico">${I('pregunta')}</span>
           <h3>¿Arrancamos a tiempo o paramos 48 horas más?</h3>
-          <p>En juego: la meta de producción, la seguridad de los trabajadores y la relación entre dos áreas.</p>
+          <p class="stakes-label">En juego</p>
+          <div class="stakes">
+            <div class="stake" data-step="4" style="--d:280ms">${tile('grafico', 'a')}<p>La meta de producción</p></div>
+            <div class="stake" data-step="4" style="--d:400ms">${tile('escudo', 'green')}<p>La seguridad de los trabajadores</p></div>
+          </div>
         </div>
       </div>`,
       notes: [
@@ -94,14 +98,12 @@
         <div class="glass stat" data-step="2"><b>S/ 250 000</b><span>Pérdida por cada día de planta detenida (≈ S/ 10 417 por hora)</span></div>
         <div class="glass stat" data-step="2" style="--d:110ms"><b>S/ 500 000</b><span>Costo de ampliar la parada 48 horas</span></div>
         <div class="glass tinted stat danger" style="--tint:var(--red)" data-step="3"><b>S/ 1 200 000</b><span>Costo de una falla mayor no programada, más una parada más larga</span></div>
-      </div>
-      <div class="glass banner" data-step="4">${tile('balanza', 'yellow')}<p><b>Ampliar conviene si la probabilidad de falla supera ≈ 42 %</b> (500 000 ÷ 1 200 000). El caso no da esa probabilidad, pero el desgaste ya supera el límite del fabricante.</p></div>`,
+      </div>`,
       notes: [
         'J: Estos son los datos del caso; fueron nuestros criterios objetivos.',
         'J: La parada programada es de 72 horas, Mantenimiento pide 48 más y de este equipo depende el 40 % de la capacidad de la planta.',
         'J: Cada día con la planta detenida cuesta 250 000 soles, unos 10 417 por hora. Ampliar 48 horas cuesta 500 000.',
-        'J: Pero una falla mayor costaría 1 200 000 soles, además de una parada más larga.',
-        'J: Si dividimos 500 000 entre 1 200 000, ampliar conviene cuando la probabilidad de falla supera más o menos el 42 %. El caso no la da, pero el desgaste ya está por encima del límite del fabricante.',
+        'J: Pero una falla mayor costaría 1 200 000 soles, más del doble que ampliar, además de una parada más larga.',
       ],
     },
     // ------------------------------------------------------------------ 5
@@ -131,55 +133,51 @@
       <div class="batna">
         <article class="glass" data-step="1">
           <span class="capsule chip a">Operaciones (A)</span>
-          <small>BATNA</small><h3>Elevar la decisión a la gerencia general</h3>
+          <small>Plan B</small><h3>Llevar el problema a la gerencia general</h3>
           <div class="meter" style="--c:var(--a)"><i class="on"></i><i class="on"></i><i></i><i></i><i></i><b>Débil</b></div>
-          <p>La condición no negociable impide operar el equipo; la gerencia podría ordenar las 48 horas sin plan ni garantía.</p>
-          <small>Punto de reserva</small><p class="strong">Hasta 48 horas, solo con sustento por escrito y un plan para recuperar la producción.</p>
+          <p>Por seguridad, la gerencia igual pararía la planta, y quizá por las 48 horas completas.</p>
+          <small>Su límite</small><p class="strong">Hasta 48 horas, si recibe un sustento por escrito y un plan para recuperar la producción.</p>
         </article>
         <article class="glass" data-step="2">
           <span class="capsule chip b">Mantenimiento (B)</span>
-          <small>BATNA</small><h3>Informe técnico y no liberar el equipo</h3>
-          <div class="meter" style="--c:var(--b)"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><b>Más fuerte</b></div>
-          <p>Lo respalda la condición de seguridad, pero rompe la relación con Operaciones.</p>
-          <small>Punto de reserva</small><p class="strong">Nunca arrancar sin cambio y pruebas; mínimo 36 horas con tareas adelantadas y turnos continuos.</p>
+          <small>Plan B</small><h3>Hacer un informe técnico y no entregar el equipo</h3>
+          <div class="meter" style="--c:var(--b)"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><b>Fuerte</b></div>
+          <p>La seguridad le da la razón, pero afecta la relación con Operaciones.</p>
+          <small>Su límite</small><p class="strong">No arrancar sin cambiar y probar la pieza. Mínimo 36 horas.</p>
         </article>
-      </div>
-      <p class="takeaway" data-step="3">El BATNA más fuerte de Mantenimiento explica por qué cedió menos.</p>
-      <p class="foot">Límites definidos por cada parte para la negociación.</p>`,
+      </div>`,
       notes: [
-        'J: Antes de negociar, cada uno definió su mejor alternativa si no había acuerdo.',
-        'J: La mía era llevar el problema a la gerencia general. Era débil: con la condición de seguridad, la gerencia probablemente ordenaría la ampliación, quizá por las 48 horas y sin condiciones para mí. Por eso no la revelé. Mi límite: hasta 48 horas, con sustento por escrito y un plan de recuperación.',
-        'R: La mía era más fuerte: presentar un informe técnico y no liberar el equipo. Pero rompía la relación con Operaciones, y yo también respondo por los resultados. Mi límite: nunca arrancar sin cambiar y probar; como mínimo 36 horas.',
-        'R: Por eso Mantenimiento pudo ceder menos en la negociación.',
+        'J: Antes de negociar, cada uno pensó en su plan B: qué haría si no llegábamos a un acuerdo. En el curso se llama BATNA.',
+        'J: Mi plan B era llevar el problema a la gerencia general. Era débil: por seguridad, la gerencia igual pararía la planta, y quizá por las 48 horas completas. Por eso no lo revelé. Mi límite: hasta 48 horas, si recibía un sustento por escrito y un plan para recuperar la producción.',
+        'R: Mi plan B era más fuerte: hacer un informe técnico y no entregar el equipo. Pero afectaba la relación con Operaciones, y yo también respondo por los resultados. Mi límite: no arrancar sin cambiar y probar la pieza; como mínimo 36 horas. Por eso pude ceder menos.',
       ],
     },
     // ------------------------------------------------------------------ 7
     {
       title: 'La zona de posible acuerdo', tint: ['#30D158', '#0A84FF', '#FF9F0A'],
       html: `${hd('S13 · ZOPA', 'La zona de posible acuerdo')}
-      <p class="lead">Va del mínimo técnico de Mantenimiento al máximo que Operaciones acepta con condiciones.</p>
+      <p class="lead">Es el rango de horas en el que los dos pueden decir que sí.</p>
       <div class="glass zopa">
         <div class="z-labels"><b class="ta">Operaciones (A)</b><b class="tb">Mantenimiento (B)</b></div>
         <div class="z-track">
-          <div class="z-band" data-step="3"><span>ZOPA</span></div>
-          <div class="z-bar a" data-step="1"><span>Acepta de 0 a 48 h, con sustento y plan</span></div>
-          <div class="z-bar b" data-step="2"><span>Desde 36 h: mínimo técnico</span></div>
+          <div class="z-band" data-step="3"><span>Zona de acuerdo</span></div>
+          <div class="z-bar a" data-step="1"><span>Acepta hasta 48 h, con sustento y un plan</span></div>
+          <div class="z-bar b" data-step="2"><span>Necesita al menos 36 h</span></div>
           <div class="z-axis"><i style="--x:0">0 h</i><i style="--x:20">12 h</i><i style="--x:40">24 h</i><i class="k" style="--x:60">36 h</i><i class="k" style="--x:80">48 h</i><i style="--x:100">60 h</i></div>
         </div>
       </div>
       <div class="z-costs">
-        <div class="glass mini" data-step="4"><span>Mínimo de B · 36 h</span><b>S/ 375 000</b></div>
-        <div class="glass mini" data-step="4" style="--d:110ms"><span>Máximo de A · 48 h</span><b>S/ 500 000</b></div>
-        <div class="glass mini" data-step="4" style="--d:220ms"><span>Falla mayor</span><b class="red">S/ 1 200 000</b></div>
-        <div class="glass tinted mini ok" style="--tint:var(--green);--d:330ms" data-step="4"><b>ZOPA: 36 a 48 horas</b><span>Cualquier punto cuesta menos que una falla.</span></div>
-      </div>
-      <p class="foot">Costos calculados con S/ 250 000 por día.</p>`,
+        <div class="glass mini" data-step="4"><span>Parar 36 horas cuesta</span><b>S/ 375 000</b></div>
+        <div class="glass mini" data-step="4" style="--d:110ms"><span>Parar 48 horas cuesta</span><b>S/ 500 000</b></div>
+        <div class="glass mini" data-step="4" style="--d:220ms"><span>Una falla costaría</span><b class="red">S/ 1 200 000</b></div>
+        <div class="glass tinted mini ok" style="--tint:var(--green);--d:330ms" data-step="4"><b>Acuerdo: de 36 a 48 h</b><span>Cualquier opción sale más barata que una falla.</span></div>
+      </div>`,
       notes: [
-        'R: Con esos límites armamos la zona de posible acuerdo, como vimos en la semana 13.',
-        'R: Operaciones podía aceptar desde cero hasta 48 horas, si tenía sustento y un plan de recuperación.',
-        'R: Mantenimiento necesitaba como mínimo 36 horas para no recortar las pruebas.',
-        'R: Donde se cruzan está la ZOPA: entre 36 y 48 horas.',
-        'R: En soles, entre 375 000 y 500 000. Cualquier punto de esa zona cuesta menos que una falla de 1 200 000. Y como hay varias variables, el acuerdo no se arma solo con horas, sino con un paquete de condiciones.',
+        'R: Ahora veamos dónde podíamos ponernos de acuerdo. En el curso, semana 13, se llama ZOPA: zona de posible acuerdo.',
+        'R: Operaciones podía aceptar hasta 48 horas, si tenía un sustento por escrito y un plan para recuperar la producción.',
+        'R: Mantenimiento necesitaba al menos 36 horas para cambiar la pieza sin recortar las pruebas.',
+        'R: Donde las dos barras se cruzan, de 36 a 48 horas, los dos podemos decir que sí. Esa es la ZOPA.',
+        'R: En soles: parar 36 horas cuesta 375 000 y parar 48, 500 000. Cualquier opción sale más barata que una falla de 1 200 000. Por eso negociamos dentro de esa zona, y no solo con horas, sino con un paquete de condiciones.',
       ],
     },
     // ------------------------------------------------------------------ 8
@@ -376,7 +374,7 @@
   const qa = [
     ['¿Por qué 36 horas y no 30?', 'Porque 36 es el mínimo técnico que definimos: con turnos continuos y cuatro operadores, menos horas recortarían las pruebas, y la condición no negociable impide arrancar sin pruebas aprobadas.'],
     ['¿De dónde salen el 50 % y el 95 %?', 'Son metas que acordamos en la negociación. El caso no las fija; las pusimos para que cada compromiso tenga un indicador medible y un mecanismo de verificación.'],
-    ['¿Y si la probabilidad de falla fuera baja?', 'Ampliar conviene si supera aproximadamente el 42 % (500 000 ÷ 1 200 000). El caso no da esa probabilidad, pero el desgaste ya supera el límite del fabricante y no se puede operar un equipo fuera de condiciones técnicas.'],
+    ['¿Y si la probabilidad de falla fuera baja?', 'Igual convenía ampliar: una falla costaría S/ 1 200 000, más del doble que ampliar (S/ 500 000). Además, el desgaste ya supera el límite del fabricante y no se puede operar un equipo fuera de condiciones técnicas.'],
     ['¿Por qué es ganar-ganar si Mantenimiento ganó más?', 'Porque los dos quedaron mejor que con su BATNA y satisficieron sus intereses fundamentales. La consigna acepta resultados asimétricos.'],
     ['¿Cuál era el BATNA de cada uno?', 'Operaciones: elevar la decisión a la gerencia general (débil). Mantenimiento: informe técnico y no liberar el equipo (más fuerte, pero rompía la relación).'],
     ['¿Qué técnica fue la más importante?', 'Comenzar preguntando: así Operaciones reveló su interés real, un sustento por escrito y un plan de recuperación, y con eso armamos el paquete.'],
