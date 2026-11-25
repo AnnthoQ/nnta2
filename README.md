@@ -56,7 +56,7 @@ misma clave del panel. Si cambias el número de pasos de una lámina en `js/deck
 css/ios.css        sistema visual (colores de iOS, vidrio, cápsulas, luces de fondo)
 css/stage.css      escenario de 1920×1080, láminas y animaciones de revelado
 css/control.css    panel del celular
-js/deck.js         contenido: 13 láminas, pasos, guion por paso y preguntas probables
+js/deck.js         contenido: 12 láminas, pasos, guion por paso y preguntas probables
 js/stage.js        dibuja las láminas y aplica {lámina, paso}
 js/sync.js         sincronización (Supabase Realtime o BroadcastChannel en modo local)
 js/proyector.js    lógica de la pantalla del proyector

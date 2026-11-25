@@ -223,14 +223,7 @@ p b { color: var(--label); }
 .move b { display: block; font-size: 27px; margin-bottom: 4px; }
 .move span { font-size: 23px; color: var(--label2); }
 
-/* ---------- 10 · Técnicas ---------- */
-.techs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-.tech { padding: 30px 32px; display: grid; grid-template-columns: auto 1fr; gap: 18px 22px; align-items: center; border-radius: 30px; }
-.t-hd h4 { font-size: 28px; }
-.t-hd span { font-size: 20px; color: var(--label3); font-weight: 600; }
-.tech p { grid-column: 1 / -1; font-size: 25px; color: var(--label); font-weight: 450; }
-
-/* ---------- 11 · Acuerdo ---------- */
+/* ---------- 10 · Acuerdo ---------- */
 .deal { flex: 1; display: grid; grid-template-columns: 560px 1fr; gap: 32px; align-items: stretch; }
 .big { padding: 44px 46px; display: flex; flex-direction: column; justify-content: center; gap: 8px; border-radius: 38px; }
 .big .count { font-size: 150px; font-weight: 800; letter-spacing: -.05em; line-height: 1; font-variant-numeric: tabular-nums; }
@@ -244,7 +237,7 @@ p b { color: var(--label); }
 .terms li p { font-size: 24px; color: var(--label); line-height: 1.25; }
 .terms li .chip { grid-column: 2; justify-self: start; font-size: 18px; padding: 6px 14px; }
 
-/* ---------- 12 · Resultados ---------- */
+/* ---------- 11 · Resultados ---------- */
 .results { flex: 1; display: grid; grid-template-columns: 1.08fr 1fr; grid-template-rows: 1fr auto; gap: 26px 30px; }
 .costs { padding: 36px 42px; display: flex; flex-direction: column; justify-content: center; gap: 30px; }
 .costs h4 { font-size: 26px; color: var(--label2); font-weight: 600; }
@@ -263,7 +256,7 @@ p b { color: var(--label); }
 .verdict > .ico { font-size: 54px; color: var(--yellow); }
 .verdict p { font-size: 27px; color: var(--label); }
 
-/* ---------- 13 · Cierre ---------- */
+/* ---------- 12 · Cierre ---------- */
 .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
 .pillar { padding: 38px 40px; display: flex; flex-direction: column; gap: 18px; border-radius: 34px; }
 .pillar h3 { font-size: 42px; }

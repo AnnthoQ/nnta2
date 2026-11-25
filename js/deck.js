@@ -236,29 +236,6 @@
     },
     // ------------------------------------------------------------------ 10
     {
-      title: 'Las técnicas que usamos', tint: ['#5E5CE6', '#64D2FF', '#FF9F0A'],
-      html: `${hd('Semanas 11 a 16', 'Las técnicas que usamos')}
-      <div class="techs">
-        <article class="glass tech" data-step="1">${tile('mano', 'green')}<div class="t-hd"><h4>Negociación colaborativa</h4><span>Semana 11 · Operaciones</span></div><p>«Los dos respondemos por los resultados de la unidad».</p></article>
-        <article class="glass tech" data-step="2">${tile('pregunta', 'blue')}<div class="t-hd"><h4>Comienza preguntando</h4><span>Semana 12 · ambos</span></div><p>«¿Qué necesitas para sustentar la ampliación ante la gerencia general?»</p></article>
-        <article class="glass tech" data-step="3">${tile('chat', 'teal')}<div class="t-hd"><h4>Nunca digas no</h4><span>Semana 13 · Mantenimiento</span></div><p>«No te digo que no: podríamos bajar de 48 horas si…»</p></article>
-        <article class="glass tech" data-step="4">${tile('balanza', 'yellow')}<div class="t-hd"><h4>Autoridad y criterios objetivos</h4><span>Semana 15 · Mantenimiento</span></div><p>Límite de desgaste del fabricante; S/ 500 000 frente a S/ 1 200 000.</p></article>
-        <article class="glass tech" data-step="5">${tile('reloj', 'orange')}<div class="t-hd"><h4>Escasez</h4><span>Semana 15 · Mantenimiento</span></div><p>«Los repuestos y el personal solo están disponibles ahora».</p></article>
-        <article class="glass tech" data-step="6">${tile('cronometro', 'red')}<div class="t-hd"><h4>Rubinstein: el tiempo cuesta</h4><span>Semana 16 · Operaciones</span></div><p>«Cerremos hoy: cada hora con la planta detenida también nos cuesta».</p></article>
-      </div>
-      <p class="foot">También usamos escucha activa, reformulación al cierre y reciprocidad (semana 15).</p>`,
-      notes: [
-        'R: Estas son las técnicas del curso que aplicamos.',
-        'R: Jhefferson abrió con un enfoque colaborativo: los dos respondemos por los resultados de la unidad.',
-        'R: Los dos comenzamos preguntando, como en la semana 12. Mi pregunta clave fue qué necesitaba él para sustentar la ampliación ante la gerencia general.',
-        'R: Nunca le dije que no: le dije «podríamos, si…», como vimos en la semana 13.',
-        'R: Usé la autoridad del fabricante y la comparación entre 500 000 y 1 200 000 como criterios objetivos.',
-        'R: Y la escasez: los repuestos y el personal especializado solo están disponibles ahora.',
-        'R: Jhefferson cerró con la idea de Rubinstein: cada hora de discusión con la planta detenida también cuesta. Además usamos escucha activa, reformulación al cierre y reciprocidad.',
-      ],
-    },
-    // ------------------------------------------------------------------ 11
-    {
       title: 'El acuerdo final', tint: ['#0A84FF', '#30D158', '#FFD60A'],
       html: `${hd('Acta de acuerdo', 'El acuerdo final')}
       <div class="deal">
@@ -287,7 +264,7 @@
         'J: Mantenimiento garantiza 95 % de disponibilidad por seis meses y presentamos juntos el informe a la gerencia general en 24 horas. Si surge otro desacuerdo, nos reunimos en 24 horas, revisamos datos y, si sigue, lo elevamos juntos.',
       ],
     },
-    // ------------------------------------------------------------------ 12
+    // ------------------------------------------------------------------ 11
     {
       title: 'Ganar-ganar, aunque no simétrico', tint: ['#30D158', '#FF453A', '#0A84FF'],
       html: `${hd('S12 · Acuerdo frente al BATNA', 'Ganar-ganar, aunque no simétrico')}
@@ -312,7 +289,7 @@
         'R: Mantenimiento obtuvo más porque tenía un BATNA más fuerte. La consigna acepta resultados asimétricos si los dos satisfacen sus intereses fundamentales.',
       ],
     },
-    // ------------------------------------------------------------------ 13
+    // ------------------------------------------------------------------ 12
     {
       title: 'Viable, relevante y sostenible', tint: ['#FFD60A', '#0A84FF', '#30D158'],
       html: `${hd('', 'Viable, relevante y sostenible')}
