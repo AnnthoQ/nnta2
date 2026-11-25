@@ -203,43 +203,6 @@
       ],
     },
     // ------------------------------------------------------------------ 9
-    (() => {
-      // Chat de la simulación: cada burbuja aparece en un paso. A = Operaciones (izquierda), B = Mantenimiento (derecha).
-      const etapas = [['Apertura', 1], ['Información', 4], ['Propuestas', 8], ['Cierre', 14]];
-      const chat = [
-        ['a', 'Gracias por reunirnos. Los dos respondemos por los resultados de la unidad: busquemos una solución que cuide la producción y la seguridad.'],
-        ['b', 'Coincido. El componente de la chancadora tiene un desgaste mayor al límite del fabricante. Propongo ampliar la parada 48 horas para cambiarlo y probarlo.'],
-        ['a', 'Vamos por debajo de la meta y cada día parado cuesta S/ 250 000. Propongo arrancar a las 72 horas y hacer el cambio en la próxima parada.'],
-        ['b', 'Entiendo tu preocupación por la meta. Pero no podemos operar un equipo fuera de norma, y una falla costaría S/ 1 200 000 y más días parados.'],
-        ['a', '¿Qué evidencia tienes del desgaste? ¿Cuál es el mínimo técnico? ¿Qué se puede adelantar dentro de las 72 horas?'],
-        ['b', 'Tengo el registro de la inspección. El desmontaje y los repuestos los adelantamos desde hoy; el cambio y las pruebas no se recortan. ¿Qué necesitas para sustentarlo ante la gerencia?'],
-        ['a', 'Un sustento técnico y económico por escrito, y un plan para recuperar la producción.'],
-        ['a', 'Entonces podría aceptar 24 horas adicionales.'],
-        ['b', 'No te digo que no: si adelantamos el desmontaje y trabajamos en turnos continuos, bajamos a 40 horas.'],
-        ['a', 'Te propongo 30 horas, con personal de apoyo de mi área.'],
-        ['b', 'Con cuatro operadores de tu área y turnos continuos, el mínimo técnico es 36 horas. Menos recortaría las pruebas.'],
-        ['a', 'Acepto 36 horas si garantizas la disponibilidad de la chancadora por seis meses, me apoyas en la recuperación y firmamos juntos el informe.'],
-        ['b', 'De acuerdo, siempre que el equipo arranque solo con las pruebas aprobadas.'],
-        ['b', 'Resumo: desmontaje adelantado, 36 horas con turnos continuos y cuatro operadores, arranque con pruebas aprobadas, garantía de seis meses, plan de recuperación e informe conjunto. ¿Lo dejamos en un acta?'],
-        ['a', 'Sí. Cerremos hoy: cada hora que discutimos con la planta detenida también nos cuesta.'],
-      ];
-      const quien = { a: 'J', b: 'R' };
-      return {
-        title: 'La negociación en vivo', tint: ['#30D158', '#5E5CE6', '#0A84FF'],
-        html: `${hd('S17 · Negociación aplicada', 'La negociación en vivo')}
-        <div class="chat-top">
-          <ol class="track">${etapas.map(([n, s], i) => `<li data-step="${s}"><span>${i + 1}</span>${n}</li>`).join('')}</ol>
-          <p class="who"><b class="ta">Operaciones · Jhefferson</b><b class="tb">Roy · Mantenimiento</b></p>
-        </div>
-        <div class="chat">${chat.map(([w, t], i) =>
-          `<div class="msg ${w}${i && chat[i - 1][0] === w ? ' cont' : ''}" data-step="${i + 1}"><div><p>${t}</p></div></div>`).join('')}</div>`,
-        notes: [
-          'A: Ahora pasamos a la negociación, con las etapas de la negociación aplicada de la semana 17. Cada vez que avancen aparece el siguiente mensaje: léanlo o díganlo con sus propias palabras.',
-          ...chat.map(([w, t]) => `${quien[w]}: «${t}»`),
-        ],
-      };
-    })(),
-    // ------------------------------------------------------------------ 10
     {
       title: 'Cómo llegamos a 36 horas', tint: ['#FF9F0A', '#0A84FF', '#30D158'],
       html: `${hd('S13 · Concesiones condicionadas', 'Cómo llegamos a 36 horas')}
@@ -271,7 +234,7 @@
         'J: Ninguna concesión fue gratis: cada una se cambió por algo de valor.',
       ],
     },
-    // ------------------------------------------------------------------ 11
+    // ------------------------------------------------------------------ 10
     {
       title: 'Las técnicas que usamos', tint: ['#5E5CE6', '#64D2FF', '#FF9F0A'],
       html: `${hd('Semanas 11 a 16', 'Las técnicas que usamos')}
@@ -294,7 +257,7 @@
         'R: Jhefferson cerró con la idea de Rubinstein: cada hora de discusión con la planta detenida también cuesta. Además usamos escucha activa, reformulación al cierre y reciprocidad.',
       ],
     },
-    // ------------------------------------------------------------------ 12
+    // ------------------------------------------------------------------ 11
     {
       title: 'El acuerdo final', tint: ['#0A84FF', '#30D158', '#FFD60A'],
       html: `${hd('Acta de acuerdo', 'El acuerdo final')}
@@ -324,7 +287,7 @@
         'J: Mantenimiento garantiza 95 % de disponibilidad por seis meses y presentamos juntos el informe a la gerencia general en 24 horas. Si surge otro desacuerdo, nos reunimos en 24 horas, revisamos datos y, si sigue, lo elevamos juntos.',
       ],
     },
-    // ------------------------------------------------------------------ 13
+    // ------------------------------------------------------------------ 12
     {
       title: 'Ganar-ganar, aunque no simétrico', tint: ['#30D158', '#FF453A', '#0A84FF'],
       html: `${hd('S12 · Acuerdo frente al BATNA', 'Ganar-ganar, aunque no simétrico')}
@@ -349,7 +312,7 @@
         'R: Mantenimiento obtuvo más porque tenía un BATNA más fuerte. La consigna acepta resultados asimétricos si los dos satisfacen sus intereses fundamentales.',
       ],
     },
-    // ------------------------------------------------------------------ 14
+    // ------------------------------------------------------------------ 13
     {
       title: 'Viable, relevante y sostenible', tint: ['#FFD60A', '#0A84FF', '#30D158'],
       html: `${hd('', 'Viable, relevante y sostenible')}
